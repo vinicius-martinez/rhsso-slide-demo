@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+    <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
+		<link id="theme" rel="stylesheet" href="bower_components/reveal.js/css/theme/white.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="bower_components/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'bower_components/reveal.js/css/print/pdf.css' : 'bower_components/reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+    <!-- Static navbar -->
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Red Hat SSO (keycloak)</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right nav-pills">
+            <li><button id="statusBtn" type="button" class="btn navbar-btn btn-warning">Não Configurado</button></li>
+            <li>
+              <button
+                  type="button" class="btn btn-default navbar-btn"
+                  data-toggle="modal" data-target="#configModal"
+                  data-whatever="---">
+                  Config
+              </button>
+            </li>
+            <li><button id="logBtn" type="button" disabled="disabled" class="btn navbar-btn">Login</button></li>
+            <li id="liBntLogout" class="hidden"><button id="logoutBtn" type="button" disabled="disabled" class="btn navbar-btn">Logout</button></li>
+            <li><button id="ssoBtn" type="button" disabled="disabled" class="btn navbar-btn">SSO Admin</button></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="modal fade" id="configModal" tabindex="-1" role="dialog" aria-labelledby="configModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="configModalLabel">SSO Configuration</h4>
+          </div>
+          <form>
+            <div class="modal-body">
+                <div class="form-group">
+                  <label for="sso-url" class="control-label">SSO Server URL:</label>
+                  <input type="text" class="form-control" id="sso-url">
+                </div>
+                <div class="form-group">
+                  <label for="sso-realm" class="control-label">SSO Realm:</label>
+                  <input type="text" class="form-control" id="sso-realm">
+                </div>
+                <div class="form-group">
+                  <label for="sso-cid" class="control-label">App Client ID:</label>
+                  <input type="text" class="form-control" id="sso-cid">
+                </div>
+								<!--
+                <div class="form-group">
+                  <label for="sso-cs" class="control-label">App Client Secret:</label>
+                  <input type="text" class="form-control" id="sso-cs">
+                </div>
+							-->
+            </div>
+            <div class="modal-footer">
+              <button id="modalBtnSave" type="button" class="btn btn-primary">Save</button>
+              <button id="modalBtnReset" type="reset" class="btn btn-default">Reset</button>
+              <button id="modalBtnClose" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+		<div id="divAlert" class="alert alert-success alert-dismissible hidden" role="alert">
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+       Usuário logado com<strong>Sucesso!</strong>
+    </div>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Red Hat SSO live demo!</h2>
+				</section>
+				<!--  Demo step 1)  -->
+				<section>
+					<section>
+          <h3><a href="SSO_BASE_URI/admin/master/console/#/create/realm" target="_blank">#1: Criar Realm</a></h3>
+					</section>
+					<section>
+						<div title="notAuth">
+	              <h2>Usuário não autenticado!<br>Faça o Login</h2>
+	          </div>
+	          <div class="hidden">
+	              <div class="col-2">
+	                  <h3>Token</h3>
+	                  <pre>
+	                    <code class="json" style="font-size: 12px;"></code>
+	                  </pre>
+	              </div>
+	          </div>
+	        </section>
+        </section>
+				<!--  Demo step 2)  -->
+				<section>
+					<section>
+          <h3><a href="SSO_BASE_URI/admin/master/console/#/create/client/SSO_REALM" target="_blank">#2: Criar App</a></h3>
+					</section>
+					<section>
+						<div title="notAuth">
+	              <h2>Usuário não autenticado!<br>Faça o Login</h2>
+	          </div>
+	          <div class="hidden">
+	              <div class="col-2">
+	                  <h3>Token</h3>
+	                  <pre>
+	                    <code class="json" style="font-size: 12px;"></code>
+	                  </pre>
+	              </div>
+	          </div>
+	        </section>
+        </section>
+				<!--  Demo step 3)  -->
+				<section>
+					<section>
+          <h3><a href="SSO_BASE_URI/admin/master/console/#/create/role/SSO_REALM" target="_blank">#3: Criar Roles</a></h3>
+					</section>
+					<section>
+						<div title="notAuth">
+	              <h2>Usuário não autenticado!<br>Faça o Login</h2>
+	          </div>
+	          <div class="hidden">
+	              <div class="col-2">
+	                  <h3>Token</h3>
+	                  <pre>
+	                    <code class="json" style="font-size: 12px;"></code>
+	                  </pre>
+	              </div>
+	          </div>
+	        </section>
+        </section>
+				<!--  Demo step 4)  -->
+				<section>
+					<section>
+          <h3><a href="SSO_BASE_URI/admin/master/console/#/create/user/SSO_REALM" target="_blank">#4: Criar Usuário</a></h3>
+					</section>
+					<section>
+						<div title="notAuth">
+	              <h2>Usuário não autenticado!<br>Faça o Login</h2>
+	          </div>
+	          <div class="hidden">
+	              <div class="col-2">
+	                  <h3>Token</h3>
+	                  <pre>
+	                    <code class="json" style="font-size: 12px;"></code>
+	                  </pre>
+	              </div>
+	          </div>
+	        </section>
+        </section>
+				<!--  Demo step 5)  -->
+				<section>
+					<section>
+          <h3><a href="SSO_BASE_URI/admin/master/console/#/realms/SSO_REALM/login-settings" target="_blank">#5: Habilitar auto registro (Sign Up)</a></h3>
+					</section>
+					<section>
+						<div title="notAuth">
+	              <h2>Usuário não autenticado!<br>Faça o Login</h2>
+	          </div>
+	          <div class="hidden">
+	              <div class="col-2">
+	                  <h3>Token</h3>
+	                  <pre>
+	                    <code class="json" style="font-size: 12px;"></code>
+	                  </pre>
+	              </div>
+	          </div>
+	        </section>
+        </section>
+				<!--  Demo step 6)  -->
+				<section>
+					<section>
+          <h3><a href="SSO_BASE_URI/admin/master/console/#/realms/SSO_REALM/theme-settings" target="_blank">#6: Trocar layout (Themes)</a></h3>
+					</section>
+					<section>
+						<div title="notAuth">
+	              <h2>Usuário não autenticado!<br>Faça o Login</h2>
+	          </div>
+	          <div class="hidden">
+	              <div class="col-2">
+	                  <h3>Token</h3>
+	                  <pre>
+	                    <code class="json" style="font-size: 12px;"></code>
+	                  </pre>
+	              </div>
+	          </div>
+	        </section>
+        </section>
+				<!--  Demo step 7)  -->
+				<section>
+					<section>
+          <h3><a href="SSO_BASE_URI/admin/master/console/#/realms/SSO_REALM/users" target="_blank">#7: Ações Exigidas para o Usuário</a></h3>
+					</section>
+					<section>
+						<div title="notAuth">
+	              <h2>Usuário não autenticado!<br>Faça o Login</h2>
+	          </div>
+	          <div class="hidden">
+	              <div class="col-2">
+	                  <h3>Token</h3>
+	                  <pre>
+	                    <code class="json" style="font-size: 12px;"></code>
+	                  </pre>
+	              </div>
+	          </div>
+	        </section>
+        </section>
+				<!--  Demo step 8)  -->
+				<section>
+					<section>
+          <h3><a href="SSO_BASE_URI/admin/master/console/#/realms/SSO_REALM/identity-provider-settings" target="_blank">#8: Social Login</a></h3>
+					</section>
+					<section>
+						<div title="notAuth">
+	              <h2>Usuário não autenticado!<br>Faça o Login</h2>
+	          </div>
+	          <div class="hidden">
+	              <div class="col-2">
+	                  <h3>Token</h3>
+	                  <pre>
+	                    <code class="json" style="font-size: 12px;"></code>
+	                  </pre>
+	              </div>
+	          </div>
+	        </section>
+        </section>
+				<!--  Demo step 9)  -->
+				<section>
+					<section>
+          <h3><a href="SSO_BASE_URI/admin/master/console/#/realms/SSO_REALM/authentication/flows/browser" target="_blank">#9: Fluxos de Login: two-factor auth - OTP</a></h3>
+					</section>
+					<section>
+						<div title="notAuth">
+	              <h2>Usuário não autenticado!<br>Faça o Login</h2>
+	          </div>
+	          <div class="hidden">
+	              <div class="col-2">
+	                  <h3>Token</h3>
+	                  <pre>
+	                    <code class="json" style="font-size: 12px;"></code>
+	                  </pre>
+	              </div>
+	          </div>
+	        </section>
+        </section>
+				<!--  Demo step 10)  -->
+				<section>
+					<section>
+          <h3><a href="SSO_BASE_URI/realms/SSO_REALM/account" target="_blank">#10: Gerenciamento de Conta</a></h3>
+					</section>
+					<section>
+						<div title="notAuth">
+	              <h2>Usuário não autenticado!<br>Faça o Login</h2>
+	          </div>
+	          <div class="hidden">
+	              <div class="col-2">
+	                  <h3>Token</h3>
+	                  <pre>
+	                    <code class="json" style="font-size: 12px;"></code>
+	                  </pre>
+	              </div>
+	          </div>
+	        </section>
+        </section>
+				<!--  Demo step 11)  -->
+				<section>
+					<section>
+          <h3><a href="http://localhost:8180/jboss-kitchensink" target="_blank">#11: Single Sign On/Out</a></h3>
+					</section>
+					<section>
+	          <div title="notAuth">
+	              <h2>Usuário não autenticado!<br>Faça o Login</h2>
+	          </div>
+	          <div class="hidden">
+	              <div class="col-2">
+	                  <h3>Token</h3>
+	                  <pre>
+	                    <code class="json" style="font-size: 12px;"></code>
+	                  </pre>
+	              </div>
+	          </div>
+	        </section>
+        </section>
+
+
+			</div>
+		</div>
+
+    <script src="bower_components/headjs/dist/1.0.0/head.min.js"></script>
+    <script src="bower_components/reveal.js/js/reveal.js"></script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script>window.jQuery</script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="js/keycloak.js"></script>
+
+
+		<script>
+
+      var keycloak;
+
+      $(function(){
+				// More info https://github.com/hakimel/reveal.js#configuration
+				Reveal.initialize({
+					history: true,
+
+					// More info https://github.com/hakimel/reveal.js#dependencies
+					dependencies: [
+						{ src: 'bower_components/reveal.js/plugin/markdown/marked.js' },
+						{ src: 'bower_components/reveal.js/plugin/markdown/markdown.js' },
+						{ src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true },
+						{ src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					]
+				});
+
+				kcInit();
+      })
+
+			function updateSsoUrlRefs(url){
+				console.log('>>> updateSsoUrlRefs')
+
+				$("a[href*='SSO_BASE_URI']").each(function(){
+				      this.href = this.href.replace(/.*SSO_BASE_URI/i, url);
+				   });
+			}
+
+			function updateSsoUrlRealmName(realm){
+				console.log('>>> updateSsoUrlRealmName')
+
+				$("a[href*='SSO_REALM']").each(function(){
+				      this.href = this.href.replace(/SSO_REALM/i, realm);
+				   });
+			}
+
+      function kcInit(){
+        console.log('>>> trying to init KC with: ')
+        if (sessionStorage.getItem('kcConfig')){
+          var storedConfig = JSON.parse(sessionStorage.getItem('kcConfig'))
+          //console.log(storedConfig)
+					console.log('sso-url: ' + storedConfig.url)
+					console.log('sso-realm: ' + storedConfig.realm)
+
+					if (storedConfig.url){
+						updateSsoUrlRefs(storedConfig.url)
+						$('#ssoBtn').prop("disabled", false);
+					}
+
+					if (storedConfig.realm)
+						updateSsoUrlRealmName(storedConfig.realm)
+
+          keycloak = Keycloak(storedConfig);
+
+          keycloak.init(storedConfig).success(function(authenticated) {
+              if (authenticated)
+								keycloak.loadUserProfile()
+
+              $('#statusBtn').text('Configurado!')
+              $('#statusBtn').removeClass('btn-warning').addClass('btn-success')
+              $('#logBtn').prop("disabled", false);
+          }).error(function() {
+            $('#statusBtn').text('Não Configurado.')
+            $('#statusBtn').addClass('btn-warning')
+          });
+
+          keycloak.onAuthSuccess = function() {
+            console.log('onAuthSuccess!')
+            //console.log('enable buttons!')
+						updateSectionBackgroundImage()
+
+            $('#logBtn').text('Refresh login')
+            $('#liBntLogout').removeClass('hidden')
+						$('#divAlert').removeClass('hidden')
+            $('#logoutBtn').prop("disabled", false)
+
+            $("section ~ div, div.hidden").removeClass('hidden')
+						$("div[title*='notAuth']").addClass('hidden')
+
+            $('code, code.json').text(JSON.stringify(keycloak.tokenParsed, null, 2))
+          };
+
+          //keycloak.onAuthRefreshSuccess = keycloak.onAuthSuccess;
+          keycloak.onAuthRefreshSuccess = function(){
+            console.log('Auth refresh success!');
+          };
+
+          keycloak.onAuthLogout = function(){
+            console.log('User has logged out via IDP');
+          };
+
+          keycloak.onTokenExpired = function(){
+            console.log('Token expired!');
+          };
+
+        }
+      }
+
+      function kcLogin(){
+        keycloak.login({locale:'pt_BR'})
+      }
+
+      function kcLogout(){
+        keycloak.logout()
+      }
+
+			function updateSectionBackgroundImage(){
+				$('section').attr('data-background-image', 'img/corporate-3.svg')
+
+				$('#theme').attr('href', 'bower_components/reveal.js/css/theme/night.css')
+				Reveal.sync();
+			}
+
+      $('#ssoBtn').click(function(){
+				if (sessionStorage.getItem('kcConfig')){
+          var storedConfig = JSON.parse(sessionStorage.getItem('kcConfig'))
+					if (storedConfig.url)
+		        window.open(storedConfig.url + '/admin','_blank')
+				}
+      });
+
+      $('#logBtn').click(function(){
+        kcLogin()
+      });
+
+      $('#logoutBtn').click(function(){
+        kcLogout()
+      });
+
+      $('#modalBtnSave').click(function(){
+        var _config = {}
+        _config.url          = $('#sso-url').val()
+        _config.realm        = $('#sso-realm').val()
+        _config.clientId     = $('#sso-cid').val()
+        _config.flow         = 'standard'
+        _config.responseMode = 'fragment'
+        _config.onLoad       = 'check-sso'
+
+        sessionStorage.setItem('kcConfig', JSON.stringify(_config));
+
+				kcInit();
+      });
+
+      $('#modalBtnReset').click(function(){
+        delete sessionStorage.kcConfig;
+        delete sessionStorage.oauthToken;
+        kcInit();
+      });
+
+      $('#configModal').on('show.bs.modal', function (event) {
+        if (sessionStorage.kcConfig){
+          console.log('reading from sessionStorage...');
+
+          if (sessionStorage.getItem('kcConfig')){
+            console.log(JSON.parse(sessionStorage.getItem('kcConfig')));
+
+            var __config = JSON.parse(sessionStorage.getItem('kcConfig'))
+            if (__config){
+              $('#sso-url').val(__config.url)
+              $('#sso-realm').val(__config.realm)
+              $('#sso-cid').val(__config.clientId)
+            }
+          }
+        }
+      })
+    </script>
+	</body>
+</html>
