@@ -124,6 +124,11 @@ http://localhost:32786/demo.html
   * *now you can try to login on slide-demo-app*
 
 ### Enable SignUp <a name="demo-step-6"></a>
+
+* Click **Realm Settings** and select **Login** tab;
+* Enable **User Registration**
+* Click on **Save**
+
 ### Change Themes <a name="demo-step-7"></a>
 ### Authentication Flow <a name="demo-step-8"></a>
 ### Two Factor with OTP <a name="demo-step-9"></a>
