@@ -43,7 +43,8 @@ docker build -t slide-demo-app:1.0 .
 7. [Change Themes](#demo-step-7)
 8. [User Required Actions](#demo-step-8)
 9. [Social Login](#demo-step-9)
-9. [Two Factor with OTP](#demo-step-10)
+10. [Two Factor with OTP](#demo-step-10)
+11. [End User Account Management](#demo-step-11)
 
 ### Starting RHSSO and slide-demo-app <a name="demo-step-1"></a>
 
@@ -159,6 +160,10 @@ http://localhost:32786/demo.html
 * Change the default *OTP FORM* from **OPTIONAL** to **REQUIRED**;
 * Logout from *slide-demo-app* and try to log back;
 
+### End User Account Management <a name="demo-step-11"></a>
+
+* Open a new browser tab with the following url: *http://localhost:32792/auth/realms/myrealm/account*
+* Navigate through the options and update your profile if desired;
 
 ## Additional References
 
