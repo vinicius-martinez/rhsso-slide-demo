@@ -7,8 +7,8 @@ For additional details, please refer to "Additional References section"
 ## Environment
 
 - [Docker 18.06.1-ce](https://docs.docker.com/install/)
-- [Red Hat Single Sign On 7.2](https://access.redhat.com/containers/?tab=security#/registry.access.redhat.com/redhat-sso-7/sso72-openshift/images/1.2-8.1539812404)
-*based on redhat-sso-7/sso72-openshift:1.2-8.1539812404 image*
+- [Red Hat Single Sign On 7.2](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/)
+- [Red Hat Single Sign On 7.2 1.2-8 container image](https://access.redhat.com/containers/?tab=security#/registry.access.redhat.com/redhat-sso-7/sso72-openshift/images/1.2-8.1539812404)
 
 ## Deploy from DockerHub
 
