@@ -24,17 +24,37 @@ git clone https://github.com/vinicius-martinez/rhsso-slide-demo.git
 - Build *(docker build)* RHSSO. Example:
 ```
 cd rhsso
-docker build -t viniciusmartinez/rhsso:1.0 .
+docker build -t rhsso:1.0 .
 ```
 - Build *(docker build)* slide-demo-app. Example:
 ```
 cd slides-app
-docker build -t viniciusmartinez/slide-demo-app:1.0 .
+docker build -t slide-demo-app:1.0 .
 ```
 
 ## Demo Script:
 
 1. [Starting RHSSO and slide-demo-app](#demo-step-1)
+...Open a terminal and start RHSSO
+```
+docker run -it -P viniciusmartinez/rhsso:1.0
+```
+*we're going to use "-P" to generate a random Port number for RHSSO. If you prefer, you can bind it to an alternative port of your choice*
+...Open a second terminal and start slide-demo-application
+```
+docker run -it -P viniciusmartinez/slide-demo-app:1.0
+```
+*we're going to use "-P" to generate a random Port number for RHSSO. If you prefer, you can bind it to an alternative port of your choice*
+...Open a third terminal and execute *docker ps* in order to fetch *RHSSO* and *slide-demo-app* port numbers. Example
+```
+docker ps
+CONTAINER ID        IMAGE                                 COMMAND                  CREATED             STATUS              PORTS                                                                       NAMES
+16f6cd0d3e11        viniciusmartinez/rhsso:1.0            "/opt/eap/bin/opensh…"   25 seconds ago      Up 24 seconds       0.0.0.0:32789->8080/tcp, 0.0.0.0:32788->8443/tcp, 0.0.0.0:32787->8778/tcp   upbeat_hermann
+fe93676933d3        viniciusmartinez/slide-demo-app:1.0   "container-entrypoin…"   51 seconds ago      Up 50 seconds       0.0.0.0:32786->8080/tcp, 0.0.0.0:32785->8443/tcp
+```
+*take of all ports used by RHSSO (32789, 32788) and slide-demo-app(32786,32785)*
+...Open a browser of choice and try to access *RHSSO* on the following address with admin/admin credentials: http://localhost:32789/auth
+...Open a new tab and try to access *slide-demo-app* on the following address: http://localhost:32786/demo.html
 2. [Create RHSSO Realm](#demo-step-2)
 3. [Create RHSSO Client APP](#demo-step-3)
 4. [Create RHSSO Client Roles](#demo-step-4)
