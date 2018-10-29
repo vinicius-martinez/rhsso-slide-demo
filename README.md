@@ -35,16 +35,19 @@ docker build -t slide-demo-app:1.0 .
 ## Demo Script:
 
 1. [Starting RHSSO and slide-demo-app](#demo-step-1)
+
 ...Open a terminal and start RHSSO
 ```
 docker run -it -P viniciusmartinez/rhsso:1.0
 ```
 *we're going to use "-P" to generate a random Port number for RHSSO. If you prefer, you can bind it to an alternative port of your choice*
+
 ...Open a second terminal and start slide-demo-application
 ```
 docker run -it -P viniciusmartinez/slide-demo-app:1.0
 ```
 *we're going to use "-P" to generate a random Port number for RHSSO. If you prefer, you can bind it to an alternative port of your choice*
+
 ...Open a third terminal and execute *docker ps* in order to fetch *RHSSO* and *slide-demo-app* port numbers. Example
 ```
 docker ps
@@ -54,7 +57,9 @@ fe93676933d3        viniciusmartinez/slide-demo-app:1.0   "container-entrypoinâ€
 ```
 *take of all ports used by RHSSO (32789, 32788) and slide-demo-app(32786,32785)*
 ...Open a browser of choice and try to access *RHSSO* on the following address with admin/admin credentials: http://localhost:32789/auth
+
 ...Open a new tab and try to access *slide-demo-app* on the following address: http://localhost:32786/demo.html
+
 2. [Create RHSSO Realm](#demo-step-2)
 3. [Create RHSSO Client APP](#demo-step-3)
 4. [Create RHSSO Client Roles](#demo-step-4)
