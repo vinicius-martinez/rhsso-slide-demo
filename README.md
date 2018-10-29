@@ -21,16 +21,36 @@ For additional details, please refer to "Additional References section"
 ```
 git clone https://github.com/vinicius-martinez/rhsso-slide-demo.git
 ```
-- Build *(docker build)* RHSSO:
+- Build *(docker build)* RHSSO. Example:
 ```
 cd rhsso
 docker build -t viniciusmartinez/rhsso:1.0 .
 ```
-- Build *(docker build)* slide-demo-app:
+- Build *(docker build)* slide-demo-app. Example:
 ```
 cd slides-app
 docker build -t viniciusmartinez/slide-demo-app:1.0 .
 ```
+
+## Demo Script:
+
+1. [Starting RHSSO and slide-demo-app](#demo-step-1)
+2. [Create RHSSO Realm](#demo-step-2)
+3. [Create RHSSO Client APP](#demo-step-3)
+4. [Create RHSSO Client Roles](#demo-step-4)
+5. [Enable SignUp](#demo-step-5)
+6. [Change Themes](#demo-step-6)
+7. [Authentication Flow](#demo-step-7)
+8. [Two Factor with OTP](#demo-step-8)
+
+### Starting RHSSO and slide-demo-app <a name="demo-step-1"></a>
+### Create RHSSO Realm <a name="demo-step-2"></a>
+### Create RHSSO Client APP <a name="demo-step-3"></a>
+### Create RHSSO Client Roles <a name="demo-step-4"></a>
+### Enable SignUp <a name="demo-step-5"></a>
+### Change Themes <a name="demo-step-6"></a>
+### Authentication Flow <a name="demo-step-7"></a>
+### Two Factor with OTP <a name="demo-step-8"></a>
 
 ## Additional References
 
