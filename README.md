@@ -143,9 +143,15 @@ http://localhost:32786/demo.html
 * Select a few actions on **Required User Actions** menu;
 * Click on **Save**
 
-### Social Login <a name="demo-step-10"></a>
+### Social Login <a name="demo-step-9"></a>
 
-
+* Click on **Identity Providers** right bellow the **Roles** at the left menu;
+* Select **Github** user;
+* Open a new tab and access your *Github* account. Select **Settings** -> **Developer Settings** and finally click on: **New Oauth App**
+* Inform an *Application name* and a *Homepage URL* and finally copy the **Redirect URI** from RHSSO and paste it on **CallBack URL**
+* Click on **Register Application**
+* Copy both **Client ID** and **Client Secret** from *Github* and paste them on *RHSSO*
+* Click on **Save**
 
 ### Two Factor with OTP <a name="demo-step-10"></a>
 
