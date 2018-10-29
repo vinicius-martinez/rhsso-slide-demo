@@ -115,7 +115,7 @@ http://localhost:32786/demo.html
 * Got to **Credentials** tab and inform a new password;
 * Finally click on **Reset Password**;
 
-*now you can try to login on slide-demo-app*
+  * *now you can try to login on slide-demo-app*
 
 ### Enable SignUp <a name="demo-step-6"></a>
 ### Change Themes <a name="demo-step-7"></a>
