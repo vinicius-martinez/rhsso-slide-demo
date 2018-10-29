@@ -41,7 +41,7 @@ docker build -t slide-demo-app:1.0 .
 5. [Create RHSSO User](#demo-step-5)
 6. [Enable SignUp](#demo-step-6)
 7. [Change Themes](#demo-step-7)
-8. [Authentication Flow](#demo-step-8)
+8. [User Required Actions](#demo-step-8)
 9. [Two Factor with OTP](#demo-step-9)
 
 ### Starting RHSSO and slide-demo-app <a name="demo-step-1"></a>
@@ -130,7 +130,18 @@ http://localhost:32786/demo.html
 * Click on **Save**
 
 ### Change Themes <a name="demo-step-7"></a>
-### Authentication Flow <a name="demo-step-8"></a>
+
+* Click **Realm Settings** and select **Themes** tab;
+* Select a different theme from **Login Theme** dropdown list;
+* Click on **Save**
+
+### User Required Actions <a name="demo-step-8"></a>
+
+* Click on **Users** right bellow the **Groups** at the left menu;
+* Select an user;
+* Select a few actions on **Required User Actions** menu;
+* Click on **Save**
+
 ### Two Factor with OTP <a name="demo-step-9"></a>
 
 ## Additional References
