@@ -35,63 +35,65 @@ docker build -t slide-demo-app:1.0 .
 ## Demo Script:
 
 1. [Starting RHSSO and slide-demo-app](#demo-step-1)
-
-  * Open a terminal and start RHSSO:
-  ```
-  docker run -it -P viniciusmartinez/rhsso:1.0
-  ```
-  * *we're going to use "-P" to generate a random Port number for RHSSO. If you prefer, you can bind it to an alternative port of your choice*
-
-  * Open a second terminal and start slide-demo-application:
-  ```
-  docker run -it -P viniciusmartinez/slide-demo-app:1.0
-  ```
-  *we're going to use "-P" to generate a random Port number for RHSSO. If you prefer, you can bind it to an alternative port of your choice*
-
-  * Open a third terminal and execute *docker ps* in order to fetch *RHSSO* and *slide-demo-app* port numbers. Example:
-  ```
-  docker ps
-  CONTAINER ID        IMAGE                                 COMMAND                  CREATED             STATUS              PORTS                                                                       NAMES
-  16f6cd0d3e11        viniciusmartinez/rhsso:1.0            "/opt/eap/bin/opensh…"   25 seconds ago      Up 24 seconds       0.0.0.0:32789->8080/tcp, 0.0.0.0:32788->8443/tcp, 0.0.0.0:32787->8778/tcp   upbeat_hermann
-  fe93676933d3        viniciusmartinez/slide-demo-app:1.0   "container-entrypoin…"   51 seconds ago      Up 50 seconds       0.0.0.0:32786->8080/tcp, 0.0.0.0:32785->8443/tcp
-  ```
-  *take note of all ports used by RHSSO (32789, 32788) and slide-demo-app(32786,32785)*
-
-  * Open a browser of choice and try to access *RHSSO* on the following address with admin/admin credentials:
-  http://localhost:32789/auth
-
-  * Open a new tab and try to access *slide-demo-app* on the following address:
-  http://localhost:32786/demo.html
-
 2. [Create RHSSO Realm](#demo-step-2)
-
-  * Return to the *RHSSO* browser tab and place the mouser on the left top corner, right above the **MASTER**. Click on the arrow button and select **Add Realm**;
-
-  * Inform a **NAME** (e.g myrealm) and click on **Create** button;
-
 3. [Create RHSSO Client APP](#demo-step-3)
-
-  * Click on **Clients** right bellow the **Realm Settings** at the left menu;
-  * Click on **Create** button on the right corner;
-  * Inform a **Name** (e.g: myclient);
-  * Inform the **Root URL** (e.g: http://localhost:32794);
-  * Click on **Save** button;
-  * Switch back to the *slide-demo-app* tab and click on **Config** button;
-  * Inform **SSO Server URL** (e.g: http://localhost:32792/auth)
-  * Inform **SSO Realm** (e.g: myrealm)
-  * Inform **App Client ID** (e.g: myclient)
-  * Click on **Save** and afterward **Close** button;
-  * If everything is sucessfully configured, a *green* **Configurado!** button will be displayed
-
 4. [Create RHSSO Client Roles](#demo-step-4)
-5. [Enable SignUp](#demo-step-5)
-6. [Change Themes](#demo-step-6)
-7. [Authentication Flow](#demo-step-7)
-8. [Two Factor with OTP](#demo-step-8)
+5. [Create RHSSO User](#demo-step-5)
+6. [Enable SignUp](#demo-step-6)
+7. [Change Themes](#demo-step-7)
+8. [Authentication Flow](#demo-step-8)
+9. [Two Factor with OTP](#demo-step-9)
 
 ### Starting RHSSO and slide-demo-app <a name="demo-step-1"></a>
+
+* Open a terminal and start RHSSO:
+```
+docker run -it -P viniciusmartinez/rhsso:1.0
+```
+* *we're going to use "-P" to generate a random Port number for RHSSO. If you prefer, you can bind it to an alternative port of your choice*
+
+* Open a second terminal and start slide-demo-application:
+```
+docker run -it -P viniciusmartinez/slide-demo-app:1.0
+```
+*we're going to use "-P" to generate a random Port number for RHSSO. If you prefer, you can bind it to an alternative port of your choice*
+
+* Open a third terminal and execute *docker ps* in order to fetch *RHSSO* and *slide-demo-app* port numbers. Example:
+```
+docker ps
+CONTAINER ID        IMAGE                                 COMMAND                  CREATED             STATUS              PORTS                                                                       NAMES
+16f6cd0d3e11        viniciusmartinez/rhsso:1.0            "/opt/eap/bin/opensh…"   25 seconds ago      Up 24 seconds       0.0.0.0:32789->8080/tcp, 0.0.0.0:32788->8443/tcp, 0.0.0.0:32787->8778/tcp   upbeat_hermann
+fe93676933d3        viniciusmartinez/slide-demo-app:1.0   "container-entrypoin…"   51 seconds ago      Up 50 seconds       0.0.0.0:32786->8080/tcp, 0.0.0.0:32785->8443/tcp
+```
+*take note of all ports used by RHSSO (32789, 32788) and slide-demo-app(32786,32785)*
+
+* Open a browser of choice and try to access *RHSSO* on the following address with admin/admin credentials:
+http://localhost:32789/auth
+
+* Open a new tab and try to access *slide-demo-app* on the following address:
+http://localhost:32786/demo.html
+
 ### Create RHSSO Realm <a name="demo-step-2"></a>
+
+* Return to the *RHSSO* browser tab and place the mouser on the left top corner, right above the **MASTER**. Click on the arrow button and select **Add Realm**;
+
+* Inform a **NAME** (e.g myrealm) and click on **Create** button;
+
 ### Create RHSSO Client APP <a name="demo-step-3"></a>
+
+* Click on **Clients** right bellow the **Realm Settings** at the left menu;
+* Click on **Create** button on the right corner;
+* Inform a **Name** (e.g: myclient);
+* Inform the **Root URL** (e.g: http://localhost:32794);
+* Click on **Save** button;
+* Switch back to the *slide-demo-app* tab and click on **Config** button;
+* Inform **SSO Server URL** (e.g: http://localhost:32792/auth)
+* Inform **SSO Realm** (e.g: myrealm)
+* Inform **App Client ID** (e.g: myclient)
+* Click on **Save** and afterward **Close** button;
+* If everything is successfully configured, a *green* **Configurado!** button will be displayed
+
+### Create RHSSO Client Roles <a name="demo-step-4"></a>
 ### Create RHSSO Client Roles <a name="demo-step-4"></a>
 ### Enable SignUp <a name="demo-step-5"></a>
 ### Change Themes <a name="demo-step-6"></a>
