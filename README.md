@@ -36,11 +36,11 @@ docker build -t slide-demo-app:1.0 .
 
 1. [Starting RHSSO and slide-demo-app](#demo-step-1)
 
-⋅⋅⋅Open a terminal and start RHSSO
-```
-docker run -it -P viniciusmartinez/rhsso:1.0
-```
-*we're going to use "-P" to generate a random Port number for RHSSO. If you prefer, you can bind it to an alternative port of your choice*
+  Open a terminal and start RHSSO
+  ```
+  docker run -it -P viniciusmartinez/rhsso:1.0
+  ```
+  *we're going to use "-P" to generate a random Port number for RHSSO. If you prefer, you can bind it to an alternative port of your choice*
 
 ⋅⋅⋅Open a second terminal and start slide-demo-application
 ```
