@@ -1,8 +1,8 @@
 # Introduction
 
-This is a simple demo showcasing some of RH-SSO features/concepts such as: Realm, Client, Social Login, Themes, etc..
+This is a simple demo showcasing some of RH-SSO features/concepts such as: Realm, Client, Roles, Social Login, Themes, etc..
 
-For additional details, please refer to [Additional References section](#demo-additional-references)
+For additional details, please refer to [Additional References](#demo-additional-references) section;
 
 ## Environment
 
