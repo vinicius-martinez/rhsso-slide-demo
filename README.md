@@ -66,6 +66,7 @@ Open a new tab and try to access *slide-demo-app* on the following address: http
 Return to the *RHSSO* browser tab and place the mouser on the left top corner, right above the **MASTER**. Click on the arrow button and select **Add Realm**;
 
 Inform a **NAME** (e.g myrealm) and click on **Create** button;
+
 3. [Create RHSSO Client APP](#demo-step-3)
 4. [Create RHSSO Client Roles](#demo-step-4)
 5. [Enable SignUp](#demo-step-5)
