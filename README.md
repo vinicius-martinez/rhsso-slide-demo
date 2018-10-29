@@ -36,7 +36,7 @@ docker build -t slide-demo-app:1.0 .
 
 1. [Starting RHSSO and slide-demo-app](#demo-step-1)
 
-  Open a terminal and start RHSSO:
+  * Open a terminal and start RHSSO:
   ```
   docker run -it -P viniciusmartinez/rhsso:1.0
   ```
