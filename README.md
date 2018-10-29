@@ -11,10 +11,10 @@ For additional details, please refer to "Additional References section"
 - [Red Hat Single Sign On 7.2 1.2-8 container image](https://access.redhat.com/containers/?tab=security#/registry.access.redhat.com/redhat-sso-7/sso72-openshift/images/1.2-8.1539812404)
 
 ## Deploy from DockerHub
-
-- docker pull viniciusmartinez/slide-demo-app:1.0
-- docker pull viniciusmartinez/rhsso:1.0
-
+```
+docker pull viniciusmartinez/slide-demo-app:1.0
+docker pull viniciusmartinez/rhsso:1.0
+```
 ## Building from "Source"
 
 - Clone the application:
