@@ -155,6 +155,11 @@ http://localhost:32786/demo.html
 
 ### Two Factor with OTP <a name="demo-step-10"></a>
 
+* Click on **Authentication** right bellow the **User Federation** at the left menu;
+* Change the default *OTP FORM* from **OPTIONAL** to **REQUIRED**;
+* Logout from *slide-demo-app* and try to log back;
+
+
 ## Additional References
 
 [CDK/Minishift Download](https://developers.redhat.com/products/cdk/download/)
