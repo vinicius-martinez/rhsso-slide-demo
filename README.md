@@ -37,7 +37,7 @@ docker build -t slide-demo-app:1.0 .
 1. [Starting RHSSO and slide-demo-app](#demo-step-1)
 2. [Create RHSSO Realm](#demo-step-2)
 3. [Create RHSSO Client APP](#demo-step-3)
-4. [Create RHSSO Client Roles](#demo-step-4)
+4. [Create RHSSO Roles](#demo-step-4)
 5. [Create RHSSO User](#demo-step-5)
 6. [Enable SignUp](#demo-step-6)
 7. [Change Themes](#demo-step-7)
@@ -93,12 +93,33 @@ http://localhost:32786/demo.html
 * Click on **Save** and afterward **Close** button;
 * If everything is successfully configured, a *green* **Configurado!** button will be displayed
 
-### Create RHSSO Client Roles <a name="demo-step-4"></a>
-### Create RHSSO Client Roles <a name="demo-step-4"></a>
-### Enable SignUp <a name="demo-step-5"></a>
-### Change Themes <a name="demo-step-6"></a>
-### Authentication Flow <a name="demo-step-7"></a>
-### Two Factor with OTP <a name="demo-step-8"></a>
+### Create RHSSO Roles <a name="demo-step-4"></a>
+
+* Click on **Roles** right bellow the **Client Templates** at the left menu;
+* Click on **Add Role** button;
+* Inform a **Role Name** (e.g: realm-role) and afterward **Save** button;
+* Click on **Clients** right bellow the **Realm Settings** at the left menu;
+* Select **myclient** and **Roles afterward**;
+* Click on **Add Role** button;
+* Inform a **Role Name** (e.g: client-role) and afterward **Save** button;
+* Click on **Roles** again;
+* Select **Default Roles**
+* Select **realm-role** and click on **Add Selected**
+* Select **myclient** and repeat the same procedure, adding **client-role**
+
+### Create RHSSO User <a name="demo-step-5"></a>
+
+* Click on **Users** right bellow the **Groups** at the left menu;
+* Click on **Add User** button;
+* Inform a **Username** and click on **Save** button;
+* Got to **Credentials** tab and inform a new password;
+* Finally click on **Reset Password** ;
+*now you can try to login on slide-demo-app*
+
+### Enable SignUp <a name="demo-step-6"></a>
+### Change Themes <a name="demo-step-7"></a>
+### Authentication Flow <a name="demo-step-8"></a>
+### Two Factor with OTP <a name="demo-step-9"></a>
 
 ## Additional References
 
