@@ -2,7 +2,7 @@
 
 This is a simple demo showcasing some of RH-SSO features/concepts such as: Realm, Client, Social Login, Themes, etc..
 
-For additional details, please refer to "Additional References section"
+For additional details, please refer to [Additional References section](#demo-additional-references)
 
 ## Environment
 
@@ -165,7 +165,7 @@ http://localhost:32786/demo.html
 * Open a new browser tab with the following url: *http://localhost:32792/auth/realms/myrealm/account*
 * Navigate through the options and update your profile if desired;
 
-## Additional References
+## Additional References <a name="demo-additional-references">
 
 [Docker Port](https://docs.docker.com/engine/reference/commandline/port/)
 
