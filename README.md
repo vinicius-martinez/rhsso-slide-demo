@@ -168,12 +168,20 @@ http://localhost:32786/demo.html
 ## Additional References
 
 [Docker Port](https://docs.docker.com/engine/reference/commandline/port/)
+
 [Realm](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html-single/server_administration_guide/#the_master_realm)
+
 [Managing Clients](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html-single/server_administration_guide/#clients)
 [Roles](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html-single/server_administration_guide/#roles)
+
 [Login Page Settings](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html-single/server_administration_guide/#login_page_settings)
+
 [Themes](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html-single/server_administration_guide/#themes)
+
 [Authentication Flow](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html-single/server_administration_guide/#authentication-flows)
+
 [User Required Actions](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html-single/server_administration_guide/#required_actions)
+
 [Social Identity Providers](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html-single/server_administration_guide/#social_identity_providers)
+
 [OTP](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html-single/server_administration_guide/#otp_policies)
