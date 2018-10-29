@@ -42,7 +42,8 @@ docker build -t slide-demo-app:1.0 .
 6. [Enable SignUp](#demo-step-6)
 7. [Change Themes](#demo-step-7)
 8. [User Required Actions](#demo-step-8)
-9. [Two Factor with OTP](#demo-step-9)
+9. [Social Login](#demo-step-9)
+9. [Two Factor with OTP](#demo-step-10)
 
 ### Starting RHSSO and slide-demo-app <a name="demo-step-1"></a>
 
@@ -142,7 +143,11 @@ http://localhost:32786/demo.html
 * Select a few actions on **Required User Actions** menu;
 * Click on **Save**
 
-### Two Factor with OTP <a name="demo-step-9"></a>
+### Social Login <a name="demo-step-10"></a>
+
+
+
+### Two Factor with OTP <a name="demo-step-10"></a>
 
 ## Additional References
 
